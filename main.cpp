@@ -41,7 +41,7 @@
 int main(int arc, char * argv[]) {
 
     //Otwieranie pliku
-    FILE* f = fopen("zdjecie.bmp", "rb");
+    FILE* f = fopen(argv[], "rb");
     if (f == nullptr){std::cout << "Brak pliku\n\n";}
     else{std::cout << "Plik otwarty\n\n";}
 
@@ -57,6 +57,7 @@ int main(int arc, char * argv[]) {
     std::cout << "Rezerwacja 2: " << Plik.fReserved2 << "\n";
     fread(&Plik.fOffBits, sizeof(Plik.fOffBits), 1, f);
     std::cout << "Pozycja danych: " << Plik.fOffBits << "\n";
+    fseek(f, 14, SEEK_SET);
     fread(&zdjecie.Size, sizeof(zdjecie.Size), 1, f);
     std::cout << "Naglowek wielkosc: " << zdjecie.Size << "\n";
     fread(&zdjecie.Width, sizeof(zdjecie.Width), 1, f);

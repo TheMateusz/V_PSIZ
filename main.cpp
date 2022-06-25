@@ -10,7 +10,7 @@
     char R;
     char G;
     char B;
-    }
+    } kolor;
 
     //Struktura naglowek
     struct naglowek
@@ -29,21 +29,27 @@
     } zdjecie;
 
     //Struktura naglowek plik
-    struct FileHeader
+    struct NaglowekPlik
     {
     short fType;
     int fSize;
     short fReserved1;
     short fReserved2;
     int fOffBits;
-    } plik;
+    } Plik;
 
 int main(int arc, char * argv[]) {
 
     //Otwieranie pliku
-    FILE* f = fopen(argv[1], "rb");
-    if (f == nullptr){std::cout << "Brak pliku";}
-    else{std::cout << "Plik otwarty";}
+    FILE* f = fopen("zdjecie.bmp", "rb");
+    if (f == nullptr){std::cout << "Brak pliku\n\n";}
+    else{std::cout << "Plik otwarty\n\n";}
+
+    std::cout << "Informacje o pliku:\n";
+
+    fread(&Plik.fType, sizeof(Plik.fType), 1, f);
+    std::cout << "Typ: " << Plik.fType << "\n";
+
 
 
 }

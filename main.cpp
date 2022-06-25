@@ -41,7 +41,7 @@
 int main(int arc, char * argv[]) {
 
     //Otwieranie pliku
-    FILE* f = fopen(, "rb");
+    FILE* f = fopen("zdjecie.bmp", "rb");
     if (f == nullptr){std::cout << "Brak pliku\n\n";}
     else{std::cout << "Plik otwarty\n\n";}
 

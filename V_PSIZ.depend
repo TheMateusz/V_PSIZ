@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1656157335 source:c:\users\mateusz\desktop\v_psiz\main.cpp
+	<stdio.h>
+	<stdlib.h>
+	<limits.h>
+

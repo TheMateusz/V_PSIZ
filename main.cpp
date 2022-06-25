@@ -79,7 +79,12 @@ int main(int arc, char * argv[]) {
     std::cout << "Liczba kolorow: " << zdjecie.CUsed << "\n";
     fread(&zdjecie.CImportant, sizeof(zdjecie.CImportant), 1, f);
     std::cout << "Kolory w palecie: " << zdjecie.CImportant << "\n";
+    fclose(f);
 
+    //Otwieranie pliku
+    FILE* n = fopen("neg.bmp", "wb");
+    if (n == nullptr){std::cout << "Brak pliku\n\n";}
+    else{std::cout << "Plik otwarty\n\n";}
 
 
 }
